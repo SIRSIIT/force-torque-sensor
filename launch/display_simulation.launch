@@ -10,14 +10,14 @@
   <!-- EXAMPLE FOR NANO17 -->
       <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model nano17"  respawn="false" output="screen" />
 
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <!--include file="$(find gazebo_ros)/launch/empty_world.launch">
       <arg name="world_name" value="$(find force_torque_sensor)/worlds/simple_environment.world"/>
       <arg name="paused" value="false"/>
       <arg name="use_sim_time" value="true"/>
       <arg name="gui" value="true"/>
       <arg name="headless" value="false"/>
       <arg name="debug" value="false"/>
-    </include>
+    </include-->
 
   <node name="ft_sensor_rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find force_torque_sensor)/launch/ft_sensor_rviz_config.rviz" output="screen"/>
 

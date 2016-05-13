@@ -15,23 +15,25 @@
 		</joint>
 
 		<link name="${name}_${type}_base">
-			<insert_block name="nano17"/>
+			<insert_block name="ati_gamma"/>
 		</link>
 
-		<joint name="${parent}_${name}_measure_joint" type="revolute">
-			<insert_block name="nano17_measure_frame"/>
+	    <link name="${name}_${type}_measure">
+			<insert_block name="ati_gamma_platform"/>
+		</link>
+
+
+		<joint name="${parent}_${name}_measure_joint" type="fixed">
+		    <origin xyz="0 0 0.0165" rpy="0 0 0"/>
 			<parent link="${name}_${type}_base"/>
 			<child link="${name}_${type}_measure"/>
-			<limit lower="0" upper="0" effort="100" velocity="100"/>
-			<axis xyz="0 0 1" />
+			<!--limit lower="-0.00001" upper="0.00001" effort="100" velocity="100"/>
+			<axis xyz="0 0 1" /-->
 		</joint>
 
-		<link name="${name}_${type}_measure">
-			<insert_block name="nano17_platform"/>
-		</link>
-
+	
         <xacro:ft_sensor_gazebo name="${name}" parent="${parent}" type="${type}"/>
 
 	</xacro:macro>
-
+ 
 </robot>

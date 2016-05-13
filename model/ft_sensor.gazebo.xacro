@@ -18,14 +18,14 @@
     <!-- The ft_sensor plugin  -->
     <gazebo>
         <plugin name="${name}_ft_sensor" filename="libgazebo_ros_ft_sensor.so">
-        <updateRate>1000.0</updateRate>
+        <updateRate>100.0</updateRate>
         <topicName>${parent}_${name}/ft_sensor_topic</topicName> 
         <jointName>${parent}_${name}_measure_joint</jointName>
-        <noise>
+        <!--noise>
           <type>gaussian</type>
           <mean>0.0</mean>
-          <stddev>0.003</stddev> <!-- change this to simulate noise --> 
-        </noise>
+          <stddev>0.00</stddev> 
+        </noise-->
         </plugin>
     </gazebo>
 
